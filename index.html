@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hen Info Card 🐔</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div class="splash">🐔 Welcome to Hen World!</div>
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="image.webp" alt="Logo" class="logo" />
+  </div>
+
+  <!-- Login/Logout Buttons -->
+  <button id="loginBtn" class="btn">Login</button>
+  <button id="logoutBtn" class="btn" style="display:none;">Logout</button>
+
+  <!-- Message -->
+  <div id="loginMessage"></div>
+
+  <!-- Hen Card -->
+  <div id="henCard">
+    <img src="image.webp" alt="Hen Image" />
+    <h2>Hen - The Feathered Friend</h2>
+    <p>Hens are domesticated birds known for laying eggs and their gentle nature. They are social creatures that enjoy foraging, dust-bathing, and nesting.</p>
+    <h3>🐔 Fun Facts About Hens</h3>
+    <ul>
+      <li>1. Hens can remember over 100 different faces of people or animals.</li>
+      <li>2. They communicate using over 30 distinct sounds.</li>
+      <li>3. A group of hens is called a flock.</li>
+      <li>4. Hens love to sunbathe and take dust baths to stay clean.</li>
+      <li>5. They dream while sleeping, just like humans!</li>
+      <li>6. Chickens are the closest living relatives to the Tyrannosaurus rex.</li>
+      <li>7. Hens have excellent memories and can solve puzzles.</li>
+      <li>8. They can lay around 250 to 300 eggs per year!</li>
+      <li>9. A hen turns her eggs nearly 50 times per day while hatching.</li>
+      <li>10. They can see ultraviolet light — beyond what humans can see!</li>
+    </ul>
+  </div>
+
+  
+
+  <!-- Sound -->
+  <audio id="loginSound" src="login-sound.mp3" preload="auto"></audio>
+
+  <!-- JavaScript -->
+  <script>
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const henCard = document.getElementById("henCard");
+    const loginSound = document.getElementById("loginSound");
+    const loginMessage = document.getElementById("loginMessage");
+    const funFacts = document.getElementById("funFacts");
+
+    loginBtn.addEventListener("click", () => {
+      henCard.style.display = "block";
+      funFacts.style.display = "block";
+      loginBtn.style.display = "none";
+      logoutBtn.style.display = "inline-block";
+      loginSound.play();
+      loginMessage.textContent = "You are now logged in!";
+    });
+
+    logoutBtn.addEventListener("click", () => {
+      henCard.style.display = "none";
+      funFacts.style.display = "none";
+      loginBtn.style.display = "inline-block";
+      logoutBtn.style.display = "none";
+      loginMessage.textContent = "You have logged out!";
+    });
+  </script>
+
+</body>
+</html>
